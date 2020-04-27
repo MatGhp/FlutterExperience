@@ -11,38 +11,84 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       home: Scaffold(
-        backgroundColor: Colors.white,
-        appBar: AppBar(backgroundColor: Colors.red, title: Text('Some Title')),
+        appBar: AppBar(
+            backgroundColor: Colors.red,
+            title: Text(
+              'Title...',
+              style: TextStyle(fontFamily: 'Pacifico'),
+            )),
+        backgroundColor: Colors.teal,
         body: SafeArea(
           child: Column(
-            crossAxisAlignment: CrossAxisAlignment.stretch,
+            mainAxisAlignment: MainAxisAlignment.center,
             children: <Widget>[
-              Container(
-                  height: 100,
-                  color: Colors.deepOrangeAccent,
-                  child: Row(children: <Widget>[
-                    Icon(Icons.star, size: 50),
-                    Icon(Icons.star, size: 50),
-                    Icon(Icons.star, size: 50)
-                  ])),
-              SizedBox(height: 3),
-              Container(
-                  height: 100,
-                  color: Colors.redAccent,
-                  child: Row(children: <Widget>[
-                    Icon(Icons.adjust, size: 50),
-                    Icon(Icons.adjust, size: 50),
-                    Icon(Icons.adjust, size: 50)
-                  ])),
-              SizedBox(height: 3),
-              Container(
-                  height: 100,
-                  color: Colors.deepOrange,
-                  child: Row(children: <Widget>[
-                    Icon(Icons.access_time, size: 50),
-                    Icon(Icons.access_time, size: 50),
-                    Icon(Icons.access_time, size: 50),
-                  ])),
+              CircleAvatar(
+                radius: 50.0,
+                backgroundImage: AssetImage('images/me.jpg'),
+              ),
+              Text(
+                'Mojtaba Ghanaat Pisheh',
+                style: TextStyle(
+                  color: Colors.white,
+                  fontSize: 30.0,
+                  fontWeight: FontWeight.bold,
+                  fontFamily: 'Pacifico',
+                ),
+              ),
+              Text(
+                'Software Developer',
+                style: TextStyle(
+                  color: Colors.teal.shade100,
+                  fontSize: 15.0,
+                  fontWeight: FontWeight.bold,
+                  fontFamily: 'Source Sans Pro',
+                  letterSpacing: 2.5,
+                ),
+              ),
+              SizedBox(
+                height: 20.0,
+                width: 150.0,
+                child: Divider(
+                  color: Colors.teal.shade100,
+                ),
+              ),
+              Card(
+                color: Colors.white,
+                margin: EdgeInsets.symmetric(vertical: 10.0, horizontal: 25.0),
+                child: ListTile(
+                  leading: Icon(
+                    Icons.phone,
+                    size: 30.0,
+                    color: Colors.teal,
+                  ),
+                  title: Text(
+                    '+49 123 456 78910',
+                    style: TextStyle(
+                      color: Colors.teal.shade900,
+                      fontSize: 20.0,
+                    ),
+                  ),
+                ),
+              ),
+
+              Card(
+                  color: Colors.white,
+                  margin:
+                      EdgeInsets.symmetric(vertical: 10.0, horizontal: 25.0),
+                  child: ListTile(
+                    leading: Icon(
+                      Icons.email,
+                      size: 30.0,
+                      color: Colors.teal,
+                    ),
+                    title: Text(
+                      'email@gmail.com',
+                      style: TextStyle(
+                        color: Colors.teal.shade900,
+                        fontSize: 20.0,
+                      ),
+                    ),
+                  )),
             ],
           ),
         ),
