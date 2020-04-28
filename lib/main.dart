@@ -1,12 +1,13 @@
 import 'package:flutter/material.dart';
 
 void main() {
-  runApp(
-    MyApp(),
-  );
+  runApp(MaterialApp(
+    title: 'Navigation Basics',
+    home: VisitCard(),
+  ));
 }
 
-class MyApp extends StatelessWidget {
+class VisitCard extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
@@ -70,7 +71,6 @@ class MyApp extends StatelessWidget {
                   ),
                 ),
               ),
-
               Card(
                   color: Colors.white,
                   margin:
@@ -95,6 +95,25 @@ class MyApp extends StatelessWidget {
         floatingActionButton: FloatingActionButton(
           backgroundColor: Colors.red,
           child: Icon(Icons.add),
+          onPressed: () => Navigator.push(
+              context, MaterialPageRoute(builder: (context) => CoinTracker())),
+        ),
+      ),
+    );
+  }
+}
+
+class CoinTracker extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(
+        title: Text("Coin Trtacker"),
+      ),
+      body: Center(
+        child: RaisedButton(
+          onPressed: () => Navigator.pop(context),
+          child: Text('Go back!'),
         ),
       ),
     );
